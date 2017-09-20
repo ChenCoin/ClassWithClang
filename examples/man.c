@@ -1,15 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Class.h"
+#include "../src/Class.h"
 #include "man.h"
 
-/* code man */
 int _sayHello();
-CreateClass(Man,
+CreateClass(
+	Man,
 	(
-		(*this).name = "NoName";
-		(*this).sayHello = _sayHello;
-	))
+		$(this).name = "NoName";
+		$(this).sayHello = _sayHello;
+	)
+)
 
 int _sayHello(){
 	Man this = (Man)THIS;

@@ -30,10 +30,9 @@ static void* THIS = NULL;
 		return var;			\
 	}					\
 	int _init##TYPE##Data(TYPE this){	\
-		_init##__VA_ARGS__##Data(	\
-			(__VA_ARGS__)this );	\
-		GetVAR INIT			\
+		_init##__VA_ARGS__##Data((__VA_ARGS__)this);\
 		(*this).used = _##TYPE##Used;	\
+		GetVAR INIT			\
 		return 0;			\
 	}					\
 	TYPE _init##TYPE(){			\

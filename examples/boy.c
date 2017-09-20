@@ -1,17 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Class.h"
+#include "../src/Class.h"
 #include "man.h"
 #include "boy.h"
 
-/* code boy */
 int _study();
-CreateClass(Boy,
+CreateClass(
+	Boy,
 	(
-		(*this).suject = "NotStudent";
-		(*this).study = _study;
+		$(this).suject = "NotStudent";
+		$(this).study = _study;
 	),
-	Man)
+	Man
+)
 	
 int _study(){
 	Boy this = (Boy)THIS;

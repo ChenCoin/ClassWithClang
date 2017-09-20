@@ -1,8 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Class.h"
+#include "../src/Class.h"
 #include "man.h"
 #include "boy.h"
+
+int changeName(void* p,char* str){
+	Man m = (Man)p;
+	$(m).name = str;
+	return 0;
+}
 
 int main(){
 	Man m = new(Man);
@@ -14,10 +20,11 @@ int main(){
 	
 	Boy b = new(Boy);
 	$(b).name = "Candy";
+	$(b).suject = "Math";
 	$(b).sayHello();
 	$(b).study();
 	
-	$( (Man)b ).name="Dav";
+	changeName(b,"Dav");
 	$(b).sayHello();
 	
 	return 0;
