@@ -1,5 +1,4 @@
-#C-Case
+CanoObject
+---
 
-多学习，多进步。
-
-记录C程序学习中的收获。
+A OOP of C language
