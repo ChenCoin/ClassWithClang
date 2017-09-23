@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../src/Class.h"
+#include "../Class.h"
 #include "man.h"
 
 int _sayHello();
 CreateClass(
 	Man,
 	(
-		$(this).name = "NoName";
-		$(this).sayHello = _sayHello;
+		(*this).name = "NoName";
+		(*this).sayHello = _sayHello;
 	)
 )
 

@@ -1,14 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../src/Class.h"
+#include "../Class.h"
 #include "man.h"
 
+//use (*this) install of $(this) to optimizer programs.
 int _sayHello();
 CreateClass(
 	Man,
 	(
-		$(this).name = "NoName";
-		$(this).sayHello = _sayHello;
+		(*this).name = "NoName";
+		(*this).sayHello = _sayHello;
 	)
 )
 

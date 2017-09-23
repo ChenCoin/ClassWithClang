@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../src/Class.h"
+#include "../Class.h"
 #include "man.h"
 #include "boy.h"
 

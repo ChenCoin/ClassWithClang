@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../src/Class.h"
+#include "../Class.h"
 #include "man.h"
 #include "boy.h"
 
@@ -8,8 +8,8 @@ int _study();
 CreateClass(
 	Boy,
 	(
-		$(this).suject = "NotStudent";
-		$(this).study = _study;
+		(*this).suject = "NotStudent";
+		(*this).study = _study;
 	),
 	Man
 )

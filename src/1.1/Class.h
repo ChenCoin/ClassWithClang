@@ -4,13 +4,11 @@
 #define new(VAR) _init##VAR()
 #define $(VAR) (*( (*VAR).used(VAR) ))
 static void* THIS = NULL;
-#define extends(VAR)				\
-	VAR					\
-	VAR##ex (*VAR##ex_f)(VAR##ex);
-	
+#define extends(VAR) VAR
+
 #define GetVAR(VAR) VAR
 #define _initData(VAR)
-	
+
 /* declear class */
 #define DeclearClass(TYPE)			\
 	struct TYPE{				\
