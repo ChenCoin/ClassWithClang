@@ -1,9 +1,13 @@
+#ifndef c_boy
+#define c_boy
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "../Class.h"
-#include "man.h"
 #include "boy.h"
 
+#include "man.c"
+//use (*this) install of $(this) to optimizer programs.
 int _study();
 CreateClass(
 	Boy,
@@ -20,3 +24,5 @@ int _study(){
 		(*this).name,(*this).suject);
 	return 0;
 }
+
+#endif

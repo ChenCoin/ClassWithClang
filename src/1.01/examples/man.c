@@ -1,8 +1,12 @@
+#ifndef c_man
+#define c_man
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "../Class.h"
 #include "man.h"
 
+//use (*this) install of $(this) to optimizer programs.
 int _sayHello();
 CreateClass(
 	Man,
@@ -17,3 +21,5 @@ int _sayHello(){
 	printf("Hello, I'm %s\n",(*this).name);
 	return 0;
 }
+
+#endif

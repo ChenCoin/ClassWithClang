@@ -4,11 +4,14 @@
 #define new(VAR) _init##VAR()
 #define $(VAR) (*( (*VAR).used(VAR) ))
 static void* THIS = NULL;
-#define extends(VAR) VAR
-
+#define extends(VAR)				\
+	VAR					\
+	VAR##ex (*VAR##ex_f)(VAR##ex);
+	
 #define GetVAR(VAR) VAR
 #define _initData(VAR)
-
+#define _Used(VAR)
+	
 /* declear class */
 #define DeclearClass(TYPE)			\
 	struct TYPE{				\
@@ -19,11 +22,13 @@ static void* THIS = NULL;
 	typedef struct TYPE* TYPE;		\
 	typedef TYPE TYPE##_Dataex;		\
 	TYPE _init##TYPE();			\
-	int _init##TYPE##Data(TYPE);
+	int _init##TYPE##Data(TYPE);	\
+	TYPE _##TYPE##Used(TYPE);
 
 /* code class */
 #define CreateClass(TYPE,INIT, ...)		\
 	TYPE _##TYPE##Used(TYPE var){		\
+		_##__VA_ARGS__##Used((__VA_ARGS__)var);	\
 		THIS = (TYPE)var;		\
 		return var;			\
 	}					\
@@ -35,10 +40,9 @@ static void* THIS = NULL;
 	}					\
 	TYPE _init##TYPE(){			\
 		TYPE var = (TYPE)malloc(	\
-			sizeof(TYPE));		\
+			sizeof(struct TYPE));		\
 		_init##TYPE##Data(var);		\
 		return var;			\
 	}
-
-
+	
 #endif
