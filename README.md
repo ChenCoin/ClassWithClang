@@ -1,4 +1,4 @@
-CanoObject
+CozoObject
 ---
 
 ### Context
